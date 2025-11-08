@@ -1,32 +1,38 @@
 <?php  
-	include "usermodel.php"
+	include "UserModel.php";
 
-	if($action == "create_user"){
-		$name = $_POST['lastname']
-		$name = $_POST['lastname']
-		$name = $_POST['lastname']
+	if ($action == "create_user") {
 
-		$name = $_POST['lastname']
-		$name = $_POST['lastname']
+	 	$name = $_POST['name'];
+	 	$lastname = $_POST['lastname'];
+	 	$email = $_POST['email'];
+		$password = $_POST['password'];	
+
+		$user = new UsersController();
+		$user->create($name,$lastname,$email,$password);
+	} 
+
+class UsersController{
+
+	private $User;
+
+	public function __construct() {
+	    $this->User = new UserModel();
 	}
-	/**
-	 * 
-	 */
-class UsersControllers
+
+	public function getAll()
 	{
-		private $User;
-		function __construct(argument)
-		{
-			$this->User = new UserModel();
-		}
 
-		public function getAll(){
-			returm $this->User->get();
-		}
+		return $this->User->get();
 
-		public function create(){
-			return $this->User->create();
-		}
 	}
+
+	public function create($name,$lastname,$email,$password)
+	{ 
+		return $this->User->create($name,$lastname,$email,$password);
+
+	}
+
+}
 
 ?>
