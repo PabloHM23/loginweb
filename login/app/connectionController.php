@@ -4,7 +4,7 @@ class ConnectionController{
 	private $HOST = "localhost";
 	private $USER = "root";
 	private $PASS = "12345";
-	private $DBNM = "crud";
+	private $DBNM = "CRUD";
 
 	function connect()
 	{
