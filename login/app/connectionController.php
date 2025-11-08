@@ -3,8 +3,8 @@ class ConnectionController{
 
 	private $HOST = "localhost";
 	private $USER = "root";
-	private $PASS = "";
-	private $DBNM = "programacion_web_tv";
+	private $PASS = "12345";
+	private $DBNM = "crud";
 
 	function connect()
 	{
